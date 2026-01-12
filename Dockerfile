@@ -17,9 +17,9 @@ RUN apt-get update && apt-get install -y \
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Usuário não-root
+# Usuário não-root (com fallback seguro)
 RUN groupadd -g ${GID} laravel \
- && useradd -u ${UID} -g laravel -m laravel
+ && useradd -u ${UID} -g ${GID} -m laravel
 
 USER laravel
 WORKDIR /var/www
