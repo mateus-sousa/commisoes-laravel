@@ -33,9 +33,7 @@ class Installment  extends Model
         'amount' => 'decimal:2',
     ];
 
-    /**
-     * Installment belongs to a sale
-     */
+
     public function sale(): BelongsTo
     {
         return $this->belongsTo(Sale::class);

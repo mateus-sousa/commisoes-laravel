@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CollaboratorRepository
 {
+
     public function getAllCollaborators(): Collection
     {
         return Collaborator::with('sales')->get();
-   }
+    }
 }

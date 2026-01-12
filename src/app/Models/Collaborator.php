@@ -22,9 +22,6 @@ class Collaborator extends Model
         'created_at' => 'datetime',
     ];
 
-    /**
-     * Collaborator has many sales
-     */
     public function sales(): HasMany
     {
         return $this->hasMany(Sale::class);
