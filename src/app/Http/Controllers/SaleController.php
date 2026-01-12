@@ -8,6 +8,7 @@ use Illuminate\View\View;
 class SaleController
 {
     protected SaleUseCase $saleUseCase;
+
     public function __construct()
     {
         $this->saleUseCase = new SaleUseCase();

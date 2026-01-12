@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collaborator;
 use App\UseCases\CollaboratorUseCase;
 use Illuminate\View\View;
 

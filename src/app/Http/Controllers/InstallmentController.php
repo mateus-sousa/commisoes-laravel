@@ -8,6 +8,7 @@ use Illuminate\View\View;
 class InstallmentController
 {
     protected InstallmentUseCase $installmentUseCase;
+
     public function __construct()
     {
         $this->installmentUseCase = new InstallmentUseCase();
