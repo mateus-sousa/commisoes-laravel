@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Collaborator;
+use App\Repository\CollaboratorRepository;
 use App\UseCases\CollaboratorUseCase;
 use Illuminate\View\View;
 
@@ -12,7 +12,7 @@ class CollaboratorController extends Controller
 
     public function __construct()
     {
-        $this->collaboratorUseCase = new CollaboratorUseCase();
+        $this->collaboratorUseCase = new CollaboratorUseCase(new CollaboratorRepository());
     }
 
     public function index(): View

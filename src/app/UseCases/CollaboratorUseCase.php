@@ -2,7 +2,6 @@
 
 namespace App\UseCases;
 
-use App\Models\Collaborator;
 use App\Repository\CollaboratorRepository;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -10,9 +9,9 @@ class CollaboratorUseCase
 {
     protected CollaboratorRepository $collaboratorRepository;
 
-    public function __construct()
+    public function __construct(CollaboratorRepository $collaboratorRepository)
     {
-        $this->collaboratorRepository = new CollaboratorRepository();
+        $this->collaboratorRepository = $collaboratorRepository;
     }
     public function getAllCollaborators(): Collection
     {
